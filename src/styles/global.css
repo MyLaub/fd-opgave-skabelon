@@ -1,1 +1,14 @@
 /* Globale styles her */
+
+:root{
+    /* farver */
+    --bg-header: rgba(27, 27, 27, 0.91);
+    --bg-black: #181818;
+    --white: #fff;
+    --yellow: #FFCC4A;
+    --green: #4EAF4E;
+    --bg-grey: #F5F5F5;
+    --bg-card: : #EBEBEB;
+
+  
+}
