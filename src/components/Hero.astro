@@ -16,15 +16,47 @@ import CEOImage from "@assets/images/ceo.png";
   </div>
   <Image src={CEOImage} alt="CEO" />
 
-  <Services />
+  <!-- <Services /> -->
 </section>
 
 <style>
   /* Styles her */
   @layer components {
     .hero {
+          display: grid;
+
       background-color: #f3f4f6;
-      padding: 2rem;
+      /* padding: 2rem; */
+       grid-column: 1 / -1;
+
+       
+        grid-template-columns: [full-bleed-start] 1fr  1fr [full-bleed-end];
+
+       > * { grid-column: full-bleed-start / full-bleed-end; }
+
+       img{
+        
+        object-fit: cover;
+         justify-self: end;
+      inline-size: clamp(260px, 45vw, 640px);
+      height: auto;
+        }
     }
   }
+
+  
+
+  /* section{
+    display: grid;
+  grid-template-columns: [full-bleed-start] 1fr  1fr [full-bleed-end];
+  column-gap: 1rem;
+
+  .hero-content{
+    grid-column: 1;
+  }
+
+  img{
+    grid-column: full-bleed-end;
+  }
+  } */
 </style>

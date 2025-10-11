@@ -1,0 +1,95 @@
+---
+import Checkmark from "@icons/checkmark.svg";
+import Pattern from "@icons/Pattern.svg"
+import CEOImage from "@assets/images/ceo.png";
+
+
+---
+
+<section>
+
+    <div class="img-container">
+        <Pattern  class="pattern" />
+        <div class="green-box"></div>
+        
+   
+
+
+
+        
+
+    </div>
+
+    <div class="text-container">
+    <p class="undertitel">
+        We'll work with you
+    </p>
+    <h1>
+        What To Expect
+    </h1>
+    <p>
+        Our collaboration is built on transparency, efficiency, and measurable results. Together, we create strategies tailored to your unique needs and goals.
+    </p>
+    <ul>
+        <li>
+            
+             <Checkmark width={32} height={32} class="checkmark" />
+             Collaborate to build actionable strategies that drive sustainable growth and deliver tangible outcomes.
+            
+
+        </li>
+        <li>
+            <Checkmark width={32} height={32} class="checkmark" />
+            Identify opportunities to optimize processes and implement impactful solutions with measurable results.
+        </li>
+    </ul>
+    </div>
+
+</section>
+
+<style>
+    section{
+display: grid;
+
+
+        .img-container{
+            .green-box{
+                width: 10.25rem;
+                height: 11.4375rem;
+                transform: rotate(-90deg);
+                flex-shrink: 0;
+                background: var(--green);
+                border-radius: 1.25rem;
+            }
+        }
+    
+        .text-container{
+    
+            ul{
+                list-style: none;
+    
+                li{
+                display: grid;
+                grid-template-columns: 32px 1fr; /* ikon + tekst */
+                column-gap: 0.75rem;
+                align-items: start;
+          
+                .checkmark{
+                    color: var(--green);
+                }
+                }
+    
+            }
+          
+        }
+
+         @media (width > 600px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    
+    
+    }
+
+
+</style>

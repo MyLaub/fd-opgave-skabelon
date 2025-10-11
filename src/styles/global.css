@@ -1,14 +1,57 @@
 /* Globale styles her */
 
-:root{
-    /* farver */
-    --bg-header: rgba(27, 27, 27, 0.91);
-    --bg-black: #181818;
-    --white: #fff;
-    --yellow: #FFCC4A;
-    --green: #4EAF4E;
-    --bg-grey: #F5F5F5;
-    --bg-card: : #EBEBEB;
+:root {
+  /* farver */
+  --bg-header: rgba(27, 27, 27, 0.91);
+  --bg-black: #181818;
+  --white: #fff;
+  --yellow: #ffcc4a;
+  --green: #4eaf4e;
+  --bg-grey: #f5f5f5;
+  --bg-card: rgba(38, 38, 38, 0.9);
 
-  
+  --step--2: clamp(0.5208rem, 0.4698rem + 0.227vw, 0.64rem);
+  --step--1: clamp(0.625rem, 0.55rem + 0.3333vw, 0.8rem);
+  --step-0: clamp(0.75rem, 0.6429rem + 0.4762vw, 1rem);
+  --step-1: clamp(0.9rem, 0.75rem + 0.6667vw, 1.25rem);
+  --step-2: clamp(1.08rem, 0.8732rem + 0.919vw, 1.5625rem);
+  --step-3: clamp(1.296rem, 1.0144rem + 1.2517vw, 1.9531rem);
+  --step-4: clamp(1.5552rem, 1.1754rem + 1.688vw, 2.4414rem);
+  --step-5: clamp(1.8662rem, 1.3582rem + 2.2581vw, 3.0518rem);
+}
+
+h1 {
+  font-family: Cabin;
+  font-size: var(--step-3);
+  line-height: 1.125;
+  font-weight: 700;
+}
+
+h2 {
+  font-family: Cabin;
+  font-size: var(--step-3);
+  font-weight: 700;
+}
+
+h3 {
+  font-family: Cabin;
+  font-size: var(--step-1);
+  line-height: 1.25;
+}
+
+p {
+  font-size: var(--step-0);
+  line-height: 1.5;
+}
+
+.undertitel {
+  text-transform: uppercase;
+  letter-spacing: 0.145rem;
+  line-height: 147.5%;
+  font-weight: 400;
+  font-family: Lato;
+}
+
+a {
+  font-size: var(--step-0);
 }
