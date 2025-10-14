@@ -11,6 +11,7 @@ import CEOImage from "@assets/images/ceo.png";
     <div class="img-container">
         <Pattern  class="pattern" />
         <div class="green-box"></div>
+        <img src="/src/data/images/what-to-expect.webp" alt="">
         
    
 
@@ -53,15 +54,39 @@ display: grid;
 
 
         .img-container{
+            grid-column: 1/2;
+
+
+            .pattern{
+                aspect-ratio: 1/1;
+                 z-index: 0;
+
+                position: absolute;
+            }
             .green-box{
-                width: 10.25rem;
-                height: 11.4375rem;
+                /* width: 10.25rem;
+                height: 11.4375rem; */
+                aspect-ratio: 1/1;
+                max-width: 10.25rem;
                 transform: rotate(-90deg);
                 flex-shrink: 0;
                 background: var(--green);
                 border-radius: 1.25rem;
+
+                position: absolute;
+                z-index: 1;
+            }
+
+
+            img{
+                aspect-ratio: 4/6;
+                z-index: 2;
+
+                /* position: absolute; */
             }
         }
+
+  
     
         .text-container{
     
