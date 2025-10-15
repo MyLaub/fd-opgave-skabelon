@@ -1,0 +1,120 @@
+section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  .img-container {
+    grid-column: 1/2;
+
+    .pattern {
+      aspect-ratio: 1/1;
+
+      /* position: absolute; */
+    }
+    .green-box {
+      /* width: 10.25rem;
+                height: 11.4375rem; */
+      aspect-ratio: 1/1;
+      max-width: 10.25rem;
+      transform: rotate(-90deg);
+      flex-shrink: 0;
+      background: var(--green);
+      border-radius: 1.25rem;
+
+      /* position: absolute; */
+    }
+
+    img {
+      aspect-ratio: 4/6;
+
+      /* position: absolute; */
+    }
+  }
+
+  .text-container {
+    ul {
+      list-style: none;
+
+      li {
+        display: grid;
+        grid-template-columns: 32px 1fr; /* ikon + tekst */
+        column-gap: 0.75rem;
+        align-items: start;
+
+        .checkmark {
+          color: var(--green);
+        }
+      }
+    }
+  }
+
+  /* @media (width > 600px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    } */
+}
+
+
+
+
+<!-- <header class="full-bleed">
+
+  <div class="container">
+   
+    <div class="logo">
+        AskExperts
+    </div>
+    <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="">Case study</a></li>
+        <li><a href="">Team</a></li>
+        <li><a href="">About</a></li>
+    </ul>
+
+    <a href="" class="login-btn">Login</a>
+
+    </div>
+
+</header> -->
+
+
+/* header{
+   display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    background-color: var(--bg-header);
+    
+
+   
+
+.logo{
+color: var(--white);
+  font-family: "Cabin", sans-serif;
+font-size: 30px;
+font-style: normal;
+font-weight: 600;
+line-height: 105%; 
+}
+
+ul{
+    display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+
+      li{
+        list-style: none;
+      }
+      
+      a{
+        text-decoration: none;
+          list-style: none;
+          color: var(--white);
+      }
+}
+
+ .login-btn {
+      border-radius: 20px;
+      background: #ffcc4a;
+      padding: 4px 16px;
+    }
+    } */

@@ -9,8 +9,8 @@ const { cardContent } = Astro.props;
 
 
 
-<section class="financial">
-  <div class="header">
+<section class="full-bleed">
+  <div class="header container">
     <div class="text-container">
       <h2>Financial projections</h2>
       <p>Financial projections are essential for planning and monitoring a company’s performance. They provide insights into potential revenue, expenses, and profitability over specific periods.</p>
@@ -22,7 +22,7 @@ const { cardContent } = Astro.props;
     </div>
   </div>
 
-  <div class="carousel">
+  <div class="carousel ">
     <ScrollingContainer />
   </div>
 </section>
@@ -30,44 +30,87 @@ const { cardContent } = Astro.props;
 
 <style>
 
-  section{
+.full-bleed {
+  grid-column: 1 / -1;               
+  display: grid;                      
+  grid-template-columns: 1fr minmax(0, 1200px) 1fr;
+}
 
+.container {
+  grid-column: 2;
+}
 
-  display: grid;
+.bleed-right {
+  grid-column: 2 / -1;
+}
+
+  section {
   background-color: var(--bg-grey);
-  
+  padding-block: clamp(3rem, 6vw, 5rem); /* luft top/bund */
 
-  .header{
-      display: flex;
-      gap: 23.9375rem;
-      align-items: flex-end;
-      
-      .arrows{
-        display: flex;
-            align-items: flex-start;
+  .header {
+    display: flex;
+    justify-content: space-between; /* i stedet for manuel gap */
+    align-items: flex-end;
+    gap: 2rem;
+    margin-bottom: 2.5rem; /* lidt afstand ned til cards */
 
-            gap: 1.625rem;
-         
-    
-        .arrow-left{
-                    max-width: 1.32194rem;
-                    background-color: var(--bg-black);
-                    color: var(--white);
-                     border-radius: 50%;
-                    padding: 20px 20px;
-                }
-                 .arrow-right{
-                    max-width: 1.32194rem;
-                    background-color: var(--yellow);
-                    color: var(--bg-black);
-                    border-radius: 50%;
-                    padding: 20px 20px;
-                }
+    .text-container {
+      max-width: 56ch;
+
+      /* h2 {
+        font-size: clamp(1.8rem, 3vw, 2.25rem);
+        line-height: 1.2;
+        font-weight: 700;
+        color: var(--text-black);
+        text-transform: capitalize;
+        margin: 0 0 0.75rem;
       }
 
+      p {
+        color: var(--text-muted);
+        line-height: 1.6;
+        margin: 0;
+      } */
+    }
+
+    /* Pilene */
+    .arrows {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+
+      button {
+        display: grid;
+        place-items: center;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        transition: opacity 0.2s ease;
+      }
+
+      .arrow-left {
+        background-color: var(--bg-black);
+        color: var(--white);
+      }
+
+      .arrow-right {
+        background-color: var(--yellow);
+        color: var(--bg-black);
+      }
+
+      button:hover {
+        opacity: 0.85;
+      }
+    }
   }
-  
- 
+
+  /* Carousel wrapper spacing */
+  .carousel {
+    grid-column: 2 / -1;
+  }
 }
 
 

@@ -2,10 +2,12 @@
 import { Image } from "astro:assets";
 import Services from "./Services.astro";
 import CEOImage from "@assets/images/ceo.png";
+import Pattern from "@icons/Pattern.svg"
 ---
 
-<section class="hero">
+<!-- <section class="hero full-bleed">
   <div class="hero-content">
+    <Pattern  class="pattern" />
     <h1>Empowering Your Business Growth</h1>
     <p>
       Discover tailored strategies and expert insights to take your business to
@@ -16,47 +18,80 @@ import CEOImage from "@assets/images/ceo.png";
   </div>
   <Image src={CEOImage} alt="CEO" />
 
-  <!-- <Services /> -->
+  <Services />
+</section> -->
+
+<section class="hero full-bleed">
+  <div class="hero-grid container">
+    <!-- <Pattern class="hero-pattern" /> -->
+    <div class="hero-text">
+      <h1>Empowering Your Business Growth</h1>
+      <p>
+        Discover tailored strategies and expert insights to take your business
+        to the next level. Let us help you navigate challenges and achieve
+        sustainable success.
+      </p>
+      <a class="btn" href="#0">Book a Meeting</a>
+    </div>
+
+    <!-- Billedet skal bløde ud til højre -->
+    <Image class="hero-img bleed-right" src={CEOImage} alt="CEO" />
+  </div>
 </section>
+
 
 <style>
   /* Styles her */
-  @layer components {
-    .hero {
-          display: grid;
-
-      background-color: #f3f4f6;
-      /* padding: 2rem; */
-       grid-column: 1 / -1;
-
-       
-        grid-template-columns: [full-bleed-start] 1fr  1fr [full-bleed-end];
-
-       > * { grid-column: full-bleed-start / full-bleed-end; }
-
-       img{
-        
-        object-fit: cover;
-         justify-self: end;
-      inline-size: clamp(260px, 45vw, 640px);
-      height: auto;
-        }
-    }
-  }
-
-  
-
-  /* section{
+  .full-bleed{
+    grid-column: 1 / -1;
     display: grid;
-  grid-template-columns: [full-bleed-start] 1fr  1fr [full-bleed-end];
-  column-gap: 1rem;
-
-  .hero-content{
-    grid-column: 1;
+    grid-template-columns: 1fr minmax(0, 1200px) 1fr;
   }
-
-  img{
-    grid-column: full-bleed-end;
+  .container{ grid-column: 2; }
+  
+  .bleed-right {
+    grid-column: 2 / -1;
   }
-  } */
+  
+  .bleed-left {
+    grid-column: 1 / 2;
+  }
+  @layer components {
+
+   section{
+  background: var(--bg-black);
+  color: var(--white);
+  padding-block: clamp(2rem, 6vw, 4rem);
+  
+  .hero-grid{
+    display: grid;
+    grid-template-columns: 1fr  1fr; 
+    align-items: end;
+    
+    .hero-text{
+      grid-column: 1;
+      position: relative;
+      max-width: 50ch;
+    }
+
+      .hero-img {
+        justify-self: end;
+        inline-size: 100%;
+        max-inline-size: none;
+        object-fit: cover;
+      }
+
+      .btn{
+        display:inline-block;
+        margin-top: 1rem;
+        padding: .85rem 1.25rem;
+        border-radius: 999px;
+        background: var(--white);
+        color: var(--bg-black);
+        text-decoration: none;
+      }
+  }
+} }
+
+
 </style>
