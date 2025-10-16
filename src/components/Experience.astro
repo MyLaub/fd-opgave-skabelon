@@ -1,0 +1,93 @@
+
+<section class="full-bleed">
+<div class="container">
+    <div class="text-container">
+    <p class="undertitel">Experience</p>
+      <h1>More than 25 years of experience</h1>
+      <p>3000+ our clients are insured around the World</p>
+      </div>
+
+      <div>
+        <div class="stats">
+            <div>
+            <div class="stat" style="--percent: 85"></div>
+            <h4>Consistency</h4>
+            </div>
+
+            <div>
+            <div class="stat" style="--percent: 95"></div>
+            <h4>Improvement</h4>
+            </div>
+
+            <div>
+            <div class="stat" style="--percent: 90"></div>
+            <h4>Branching</h4>
+            </div>
+        </div>
+      </div>
+</div>
+</section>
+
+<style>
+
+section{
+    background-color: var(--yellow);
+    color: var(--bg-black);
+    padding-block: clamp(3rem, 6vw, 5rem); 
+
+    .container{
+    display: flex;
+    align-items: flex-start;
+    gap: 5.5625rem;
+
+    .stats{
+        display: flex;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+        width: min(400px, 100% - 1rem);
+
+        .stat {
+        display: grid;
+        container: stat / inline-size;
+        --actualPercent: calc(var(--percent) *1%);
+        --border-width: 5px;
+        aspect-ratio: 1;
+        width: 150px;
+        border-radius: calc(Infinity * 1px);
+        border: var(--border-width) solid transparent;
+        background: 
+            conic-gradient(var(--yellow)) padding-box,
+            conic-gradient(#fff var(--actualPercent), #DAAE3C 0) border-box;
+        counter-reset: c var(--percent);
+  
+        &::before,
+        &::after {
+          grid-area: 1 / 1;
+        }
+        
+        &::after {
+          content: counter(c, decimal-leading-zero) "%";
+          place-self: center;
+          font-size: 38cqw;
+          font-variant-numeric: tabular-nums;
+          
+        }
+        
+        &::before {
+          content: '';
+          aspect-ratio: 1;
+          border-radius: 99px;
+          width: 20px;
+          background: var(--bg-black);
+            box-shadow: 0 0 0 5px #fff;
+          offset-path: border-box;
+          offset-distance: var(--actualPercent);
+          offset-anchor: 50% calc(50% - var(--border-width) / 2);
+          filter: drop-shadow(0 2px 2px #DAAE3C);
+        }
+} }
+}
+}
+
+</style>

@@ -29,31 +29,16 @@ const { cardContent } = Astro.props;
 
 
 <style>
-
-.full-bleed {
-  grid-column: 1 / -1;               
-  display: grid;                      
-  grid-template-columns: 1fr minmax(0, 1200px) 1fr;
-}
-
-.container {
-  grid-column: 2;
-}
-
-.bleed-right {
-  grid-column: 2 / -1;
-}
-
   section {
   background-color: var(--bg-grey);
-  padding-block: clamp(3rem, 6vw, 5rem); /* luft top/bund */
+  padding-block: clamp(3rem, 6vw, 5rem); 
 
   .header {
     display: flex;
-    justify-content: space-between; /* i stedet for manuel gap */
+    justify-content: space-between;
     align-items: flex-end;
     gap: 2rem;
-    margin-bottom: 2.5rem; /* lidt afstand ned til cards */
+    margin-bottom: 2.5rem; 
 
     .text-container {
       max-width: 56ch;
@@ -112,10 +97,5 @@ const { cardContent } = Astro.props;
     grid-column: 2 / -1;
   }
 }
-
-
-
-
-
 
 </style>
