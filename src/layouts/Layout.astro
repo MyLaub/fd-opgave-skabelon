@@ -35,17 +35,17 @@ import Header from "@components/header.astro";
   }
 
   .full-bleed {
-  grid-column: 1 / -1;                 /* forlad containeren */
-  display: grid;                        /* genskab 3-kolonne inde i sektionen */
+  grid-column: 1 / -1;               
+  display: grid;                       
   grid-template-columns: 1fr minmax(0, 1200px) 1fr;
 }
 
-/* B: Indhold der skal holde sig til "containeren" i kolonne 2 */
+
 .container {
   grid-column: 2;
 }
 
-/* C: Et element der skal bløde ud til højre kant (fra container → højre) */
+
 .bleed-right {
   grid-column: 2 / -1;
 }
