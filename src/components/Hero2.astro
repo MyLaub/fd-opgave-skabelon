@@ -1,14 +1,12 @@
 ---
 import { Image } from "astro:assets";
 import Pattern from "@icons/Pattern.svg";
-import CEO from "@assets/images/ceo.png"; // byt til din sti
+import CEO from "@assets/images/ceo.png"; 
 ---
 
 <section class="hero full-bleed">
-  <div class="hero__grid">
-    <div class="copy">
-      <Pattern class="pattern" />
-
+  <div class="hero-grid container">
+    <div class="text-container">
       <h1>Empowering Your Business Growth</h1>
       <p>
         Discover tailored strategies and expert insights to take your business
@@ -18,84 +16,44 @@ import CEO from "@assets/images/ceo.png"; // byt til din sti
       <a class="btn" href="#0">Book a Meeting</a>
     </div>
 
-    <Image class="photo" src={CEO} alt="CEO" loading="eager" />
+    <Image class="hero-img bleed-right" src={CEO} alt="CEO" />
   </div>
 </section>
 
 <style>
-/* ====== layout utils til full-bleed + container ====== */
-.full-bleed{
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: 1fr minmax(0, 1200px) 1fr;
-}
-.hero .hero__grid{ display: contents; } /* vi bruger kolonnerne direkte */
 
-/* ====== hero ====== */
-.hero{
-  background: var(--bg-black);
-  color: var(--white);
-  padding-block: clamp(2.5rem, 6vw, 4.5rem);
-}
+  section{
+    background-color: var(--bg-black);
+    color: var(--white);
+    /* padding-block: clamp(3rem, 6vw, 5rem);  */
 
-/* Tekst i container (midterkolonnen) */
-.hero .copy{
-  grid-column: 2;
-  max-width: 56ch;
-  position: relative;
-}
-.hero h1{
-  margin: 0 0 .75rem;
-  font-size: clamp(2.2rem, 5vw, 4rem);
-  line-height: 1.1;
-}
-.hero p{ margin: 0 0 1rem; opacity: .9; }
-.hero .btn{
-  display: inline-block;
-  padding: .95rem 1.25rem;
-  border-radius: 999px;
-  background: #fff;
-  color: var(--bg-black);
-  text-decoration: none;
-}
+    .hero-grid{ 
+      display: grid; 
+      grid-template-columns: 1fr 1fr;
+    
+      .text-container{
+        grid-column: 1;
+        max-width: 56ch;
+      
+      max-width: 50ch;
+      justify-content: center;
 
-/* Pattern til venstre for copy */
-.hero .pattern{
-  position: absolute;
-  inset-inline-start: max(-12%, -80px);   /* let overlap til venstre */
-  top: clamp(-24px, -3vw, -12px);
-  width: clamp(120px, 22vw, 220px);
-  height: auto;
-  pointer-events: none;
-  opacity: .9;
-}
+      p{
+        color: var(--white);
+      }
+      }
+      .hero-img{
+        grid-column: 2 / -1;      
+        /* justify-self: stretch;
+        align-self: stretch;        */
+        object-fit: cover;    
+       
+      }
+    }
 
-/* Billede: starter ved containerens højre kant og bløder ud til højre */
-.hero .photo{
-  grid-column: 2 / -1;
-  justify-self: end;
-  height: clamp(420px, 62vh, 680px);
-  width: min(48vw, 820px);
-  object-fit: cover;
-  border-radius: 20px 0 0 20px;          /* kun venstre hjørner runde */
-  box-shadow: 0 24px 60px rgba(0,0,0,.25);
-}
 
-/* ====== responsiv stacking ====== */
-@media (max-width: 900px){
-  .full-bleed{ grid-template-columns: 1fr; }
-  .hero .copy{ grid-column: 1; }
-  .hero .photo{
-    grid-column: 1;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 9;
-    border-radius: 16px;
-    margin-block-start: 1rem;
+    
   }
-  .hero .pattern{
-    inset-inline-start: 0;
-    width: clamp(120px, 40vw, 200px);
-  }
-}
 </style>
+
+

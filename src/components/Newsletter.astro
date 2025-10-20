@@ -1,0 +1,61 @@
+<section class="full-bleed">
+    <div class="container newsletter-container">
+        <div class="text-container">
+      <h2>Subscribe Our Newsletter</h2>
+      <p>Build stronger Customer Relationships with <strong>Consultalk</strong></p>
+    </div>
+
+    <form class="nl-form" action="#" method="post" novalidate>
+      <!-- <label for="nl-email">Your email address</label> -->
+      <input name="email" type="email" placeholder="your mail address" required>
+      <button type="submit">Subscribe</button>
+    </form>
+
+    </div>
+</section>
+
+<style>
+    section{
+        background-color: var(--white);
+        padding-block: clamp(3rem, 6vw, 5rem); 
+
+        .newsletter-container{
+            background-color: var(--bg-black);
+            border-radius: 20px;
+            color: var(--white);
+            padding-block: clamp(3rem, 6vw, 5rem); 
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8.8125rem;
+
+            p{
+                color: var(--white);
+            }
+
+           
+            .nl-form input{
+            appearance: none;
+            border: none;
+            border-radius: 20px;
+            background: #fff;
+            color: #111;
+            padding: 1rem 1rem;
+            min-width: min(420px, 60vw);
+            box-shadow: 0 1px 0 rgba(0,0,0,.15) inset;
+            }
+
+            .nl-form button{
+            border: none;
+            border-radius: 999px;
+            background: var(--yellow);  
+            color: var(--bg-black);
+            font-weight: 600;
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            }
+
+        }
+    }
+</style>
