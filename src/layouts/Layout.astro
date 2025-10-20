@@ -1,6 +1,7 @@
 ---
 import "@styles/main.css";
 import Header from "@components/header.astro";
+import Footer from "@components/Footer.astro";
 ---
 
 <html lang="en">
@@ -21,36 +22,7 @@ import Header from "@components/header.astro";
   <body>
      <Header />
     <slot />
+    <Footer />
   </body>
 </html>
 
-<style>
-  body{
-    display: grid;
-    grid-template-columns: 1fr minmax(0, 1200px) 1fr;
-/* 
-    > *{
-      grid-column: 2;
-    } */
-  }
-
-  .full-bleed {
-  grid-column: 1 / -1;               
-  display: grid;                       
-  grid-template-columns: 1fr minmax(0, 1200px) 1fr;
-}
-
-
-.container {
-  grid-column: 2;
-}
-
-
-.bleed-right {
-  grid-column: 2 / -1;
-}
-
-.bleed-left {
-  grid-column: 1 / 2;
-}
-</style>

@@ -20,19 +20,6 @@
 <style>
 
 
-  
-.full-bleed{
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: 1fr minmax(0, 1200px) 1fr;
-}
-.container{ grid-column: 2; }
-
-.site-header{ outline: 1px dashed hotpink; }
-.site-header + *{
-  margin-top: 0;
-}
-
 
 .site-header{
   background: var(--bg-header);
@@ -61,7 +48,7 @@
     .nav{
       display: flex;
       gap: 30px;
-      margin: 0;                 /* nulstil default */
+      margin: 0;                 
       padding: 0;
       list-style: none;
        margin: 0; padding: 0; list-style: none;

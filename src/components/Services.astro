@@ -4,7 +4,7 @@ import servicesData from "@data/services.json";
 console.log(servicesData);
 ---
 
-<ul class="cards">
+<ul class="cards container">
   {
     servicesData.services.map((service) => (
       <li class="card">
@@ -20,11 +20,11 @@ console.log(servicesData);
   @layer components {
 
     .cards{
-    
     list-style: none;
     --gap: 1rlh;
     display: grid;
     gap: 1rlh;
+    grid-row: 2 / span 2;
 
     margin-inline: auto;
     padding: var(--gap);
@@ -37,7 +37,13 @@ console.log(servicesData);
     
 
     backdrop-filter: blur(16px);
-    border-radius: 1.25rem;}
+    border-radius: 1.25rem;
+
+    p{
+      color: var(--white);
+    }
+  
+  }
 
     a{
       text-decoration: none;

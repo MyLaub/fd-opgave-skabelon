@@ -2,37 +2,53 @@
 import { Image } from "astro:assets";
 import Pattern from "@icons/Pattern.svg";
 import CEO from "@assets/images/ceo.png"; 
+import Services from "@components/Services.astro";
 ---
 
-<section class="hero full-bleed">
-  <div class="hero-grid container">
-    <div class="text-container">
-      <h1>Empowering Your Business Growth</h1>
-      <p>
-        Discover tailored strategies and expert insights to take your business
-        to the next level. Let us help you navigate challenges and achieve
-        sustainable success.
-      </p>
-      <a class="btn" href="#0">Book a Meeting</a>
-    </div>
+<section class="full-bleed">
+  <article>
+    <!-- <div class="hero-grid container"> -->
+      <div class="text-container">
+        <h1>Empowering Your Business Growth</h1>
+        <p>
+          Discover tailored strategies and expert insights to take your business
+          to the next level. Let us help you navigate challenges and achieve
+          sustainable success.
+        </p>
+        <a class="btn" href="#0">Book a Meeting</a>
+      </div>
+  
+      <Image class="hero-img bleed-right" src={CEO} alt="CEO" />
+  </article>
 
-    <Image class="hero-img bleed-right" src={CEO} alt="CEO" />
-  </div>
-</section>
+    <!-- </div> -->
+    <Services class="services"/>
+  </section>
+
 
 <style>
 
   section{
-    background-color: var(--bg-black);
     color: var(--white);
-    /* padding-block: clamp(3rem, 6vw, 5rem);  */
+    grid-template-rows: repeat(3, auto);
+    
+    > article {
+      display: grid;
+      grid-template-columns: subgrid;
+      grid-template-rows: subgrid;
+      grid-row: 1 / span 2;
+      grid-column: full;
+      background-color: var(--bg-black);
+      height: 50vh;
+      
 
-    .hero-grid{ 
-      display: grid; 
-      grid-template-columns: 1fr 1fr;
+    }
+    
+
     
       .text-container{
-        grid-column: 1;
+        grid-column: content-start;
+        padding-block: 10rem 3rem;
         max-width: 56ch;
       
       max-width: 50ch;
@@ -41,19 +57,27 @@ import CEO from "@assets/images/ceo.png";
       p{
         color: var(--white);
       }
+
+      .btn{
+        display:inline-block;
+        margin-top: 1rem;
+        padding: .85rem 1.25rem;
+        border-radius: 999px;
+        background: var(--white);
+        color: var(--bg-black);
+        text-decoration: none;
+      }
       }
       .hero-img{
-        grid-column: 2 / -1;      
-        /* justify-self: stretch;
-        align-self: stretch;        */
-        object-fit: cover;    
+        grid-column: middle / full-end;      
+        object-fit: cover;
+        min-height: 100%;
+        max-height: 0;
+        grid-row: 1 / span 2;
        
       }
     }
 
-
-    
-  }
 </style>
 
 
