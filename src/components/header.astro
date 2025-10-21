@@ -5,14 +5,24 @@
 
     <nav aria-label="Primary">
       <ul class="nav">
-        <li><a href="">Home</a></li>
+        <li><a href="/">Home</a></li>
         <li><a href="">Case study</a></li>
         <li><a href="">Team</a></li>
-        <li><a href="">About</a></li>
+        <li><a href="/about">About</a></li>
       </ul>
     </nav>
 
-    <a href="" class="login-btn">Login</a>
+    <button class="login-btn" popovertarget="popup">Login</button>
+
+<div id="popup" popover="auto">
+  <h2>Dashboard Login</h2>
+  <input name="email" type="email" 
+  placeholder="Your mail address" required>
+  <input name="password" type="password" placeholder="Password" required>
+  <button type="submit">Go to dashboard</button>
+</div>
+
+    <!-- <a href="" class="login-btn">Login</a> -->
   </div>
 </header>
 
@@ -27,14 +37,12 @@
   
   .header-bar{                 
     display: flex;
-    /* align-items: center; */
     justify-content: space-between;
     gap: 1rem;
      align-items: center;
 
     padding: 2.375rem 0;  
     
-    /* padding-block: 0.75rem; */
     
     .logo{
      color: var(--white);
@@ -69,9 +77,61 @@
   }
 }
 
+#popup::backdrop{
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(16px);
+}
 
+[popover] {
+  opacity: 0;
+  translate: 0 -100%;
+  background-color: var(--bg-black);
+  color: var(--white);
 
+  padding: 5rem 6.25rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  border-radius: 1.875rem;
+  gap: 1.875rem;
+  
+  transition: .6s;
+  transition-property: opacity, display, overlay, translate;
+  transition-behavior: allow-discrete;
+  
+  &:popover-open {
+    display: flex;
+    
+    opacity: 1;
+    translate: 0 0;
+    
+    @starting-style {
+      opacity: 0;
+      translate: 0 100%;
+    }
+    input{
+            appearance: none;
+            border-radius: 0.25rem;
+            border: 1px solid #E3E3E3;
+            background: #fff;
+            color: #111;
+            padding: 1rem 1rem;
+            /* min-width: min(420px, 60vw); */
+            box-shadow: 0 1px 0 rgba(0,0,0,.15) inset;
+            
+            }
 
-
+           button{
+            border: none;
+            border-radius: 999px;
+            background: var(--yellow);  
+            color: var(--bg-black);
+            font-weight: 600;
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            }
+  }
+}
 
 </style>
