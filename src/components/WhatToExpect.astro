@@ -1,9 +1,8 @@
 ---
 import Checkmark from "@icons/checkmark.svg";
-import Pattern from "@icons/Pattern.svg"
+import Pattern from "@icons/Pattern.svg";
 import CEOImage from "@assets/images/ceo.png";
-
-
+import Expect from "@data/images/what-to-expect.webp";
 ---
 
 <section class="expect full-bleed">
@@ -11,7 +10,7 @@ import CEOImage from "@assets/images/ceo.png";
     <div class="img-container">
       <Pattern class="pattern" />
       <div class="green-box"></div>
-      <img src="/src/data/images/what-to-expect.webp" alt="">
+      <img src={Expect.src} alt="" loading="lazy" />
     </div>
 
     <div class="text-container">
@@ -32,96 +31,99 @@ import CEOImage from "@assets/images/ceo.png";
   </div>
 </section>
 
-
-
-
 <style>
-
-
-/* sektionen */
-.expect{
-  padding-block: clamp(2rem, 4vw, 3rem);
-  background: var(--bg-white);
-}
-
-/* indre to-kolonne layout */
-.expect .expect__grid{
-  display:grid;
-  grid-template-columns: 1fr 1fr; /* tekst | billede */
-  gap: clamp(1.25rem, 4vw, 3rem);
-  align-items: center;
-}
-
-/* billede + lag */
-.expect .img-container{
-  position: relative;
-  min-inline-size: 320px;                 /* giver noget plads til lagene */
-  inline-size: 100%;
-  aspect-ratio: 16/11;                    /* base-canvas til lagene */
-}
-
-/* mønster nederst (bagest) */
-.expect .pattern{
-  position:absolute;
-  inset: 0;
-  inline-size: 58%;
-  block-size: 80%;
-  left: clamp(-12px, -3vw, -24px);
-  top: clamp(-6px, -1vw, -10px);
-  z-index: 0;
-  pointer-events: none;
-}
-
-/* grøn boks ovenpå mønsteret */
-.expect .green-box{
-  position:absolute;
-  width: clamp(110px, 22%, 180px);
-  aspect-ratio: 1;
-  background: var(--green);
-  border-radius: 1.25rem;
-  left: clamp(12px, 4vw, 28px);
-  top: clamp(38px, 6vw, 72px);
-  z-index: 1;
-}
-
-/* foto øverst */
-.expect .img-container > img{
-  position:absolute;
-  right: 170px;
-  bottom: 85px;
-  inline-size: clamp(260px, 62%, 520px);
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  border-radius: 14px;
-  z-index: 2;
-}
-
-/* tekstspalte */
-.expect .text-container{
-  display:grid;
-  gap: .75rem;
-}
-.expect .text-container ul{
-  list-style: none;
-  padding:0; margin: .5rem 0 0 0;
-  display:grid; gap:.75rem;
-}
-.expect .text-container li{
-  display:grid;
-  grid-template-columns: 32px 1fr;
-  align-items: start;
-  column-gap: .75rem;
-  color: var(--p-grey);
-}
-.expect .checkmark{ color: var(--green); }
-
-/* responsivt: stack under ~800px */
-@media (max-width: 800px){
-  .expect .expect__grid{ grid-template-columns: 1fr; }
-  .expect .img-container{ order: -1; margin-bottom: 1rem; }
-  .expect .img-container > img{
-    inline-size: 82%;
+  /* sektionen */
+  .expect {
+    padding-block: clamp(2rem, 4vw, 3rem);
+    background: var(--bg-white);
   }
-}
 
+  /* indre to-kolonne layout */
+  .expect .expect__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* tekst | billede */
+    gap: clamp(1.25rem, 4vw, 3rem);
+    align-items: center;
+  }
+
+  /* billede + lag */
+  .expect .img-container {
+    position: relative;
+    min-inline-size: 320px; /* giver noget plads til lagene */
+    inline-size: 100%;
+    aspect-ratio: 16/11; /* base-canvas til lagene */
+  }
+
+  /* mønster nederst (bagest) */
+  .expect .pattern {
+    position: absolute;
+    inset: 0;
+    inline-size: 58%;
+    block-size: 80%;
+    left: clamp(-12px, -3vw, -24px);
+    top: clamp(-6px, -1vw, -10px);
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  /* grøn boks ovenpå mønsteret */
+  .expect .green-box {
+    position: absolute;
+    width: clamp(110px, 22%, 180px);
+    aspect-ratio: 1;
+    background: var(--green);
+    border-radius: 1.25rem;
+    left: clamp(12px, 4vw, 28px);
+    top: clamp(38px, 6vw, 72px);
+    z-index: 1;
+  }
+
+  /* foto øverst */
+  .expect .img-container > img {
+    position: absolute;
+    right: 170px;
+    bottom: 85px;
+    inline-size: clamp(260px, 62%, 520px);
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 14px;
+    z-index: 2;
+  }
+
+  /* tekstspalte */
+  .expect .text-container {
+    display: grid;
+    gap: 0.75rem;
+  }
+  .expect .text-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0 0;
+    display: grid;
+    gap: 0.75rem;
+  }
+  .expect .text-container li {
+    display: grid;
+    grid-template-columns: 32px 1fr;
+    align-items: start;
+    column-gap: 0.75rem;
+    color: var(--p-grey);
+  }
+  .expect .checkmark {
+    color: var(--green);
+  }
+
+  /* responsivt: stack under ~800px */
+  @media (max-width: 800px) {
+    .expect .expect__grid {
+      grid-template-columns: 1fr;
+    }
+    .expect .img-container {
+      order: -1;
+      margin-bottom: 1rem;
+    }
+    .expect .img-container > img {
+      inline-size: 82%;
+    }
+  }
 </style>
