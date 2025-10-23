@@ -2,15 +2,39 @@
 import Layout from "@layouts/Layout.astro";
 import CaseStudyArticle from "@components/CaseStudyArticle.astro";
 import HeroBgWrapper from "@components/helpers/HeroBgWrapper.astro";
+import CaseStudy from "@assets/images/casestudy.webp"
 ---
 
 <Layout>
-  <HeroBgWrapper imagePath="test.png">
-    <header>
-      <p>Case Studies</p>
+  <HeroBgWrapper imagePath="casestudy.webp" class="full-bleed padding">
+    <header class="container">
+      <p class="undertitel">Case Studies</p>
       <h1>Taxes & Efficiency</h1>
     </header>
   </HeroBgWrapper>
 
   <CaseStudyArticle />
 </Layout>
+
+<style>
+   header{
+ 
+    display: grid;
+    inline-size: clamp(340px, 65vw, 960px);  
+    padding: 2rem 2.5rem;
+    border-radius: 1.8125rem;            
+    background: rgba(255,255,255,.85);
+    backdrop-filter: blur(5.5px);
+    color: var(--bg-black);
+
+    .undertitel{
+      background-color: var(--yellow);
+      padding: 0 0.9375rem;
+      border-radius: 20px;
+      color: var(--bg-black);
+      width: max-content;
+      margin-bottom: 1rem;
+    }
+    
+    }
+</style>
